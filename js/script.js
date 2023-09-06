@@ -42,36 +42,46 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-let playerScore = 0;
-let computerScore = 0;
-let wrongInput = false;
-for (let i = 0; i < 5; i++) {
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => {
+    let computerSelection = getComputerChoice();
+    // console.log(button.dataset.value)
+    button.addEventListener('click', ()=>{
+        playRound(button.dataset.value, getComputerChoice())
+    })
+})
 
-    let computerSelection = getComputerChoice()
-    let playerSelection = prompt("Enter Rock , Paper , or Scissor");
-    if (!gameValues.toLowerCase().includes(playerSelection.toLowerCase())) {
-        console.log("Wrong input.Play again.");
-        wrongInput = true;
-        break;
-    }
-    let message = playRound(playerSelection, computerSelection);
-    console.log(message);
-    if (message.includes("Won")) {
-        playerScore++;
-    }
-    else if (message.includes("Lose")) {
-        computerScore++;
-    }
-}
+// let playerScore = 0;
+// let computerScore = 0;
+// let wrongInput = false;
+// for (let i = 0; i < 5; i++) {
+    
+    //     let computerSelection = getComputerChoice()
+    //     let playerSelection = prompt("Enter Rock , Paper , or Scissor");
+    //     if (!gameValues.toLowerCase().includes(playerSelection.toLowerCase())) {
+        //         console.log("Wrong input.Play again.");
+        //         wrongInput = true;
+        //         break;
+        //     }
+        //     let message = playRound(playerSelection, computerSelection);
+        //     console.log(message);
+        //     if (message.includes("Won")) {
+            //         playerScore++;
+            //     }
+            //     else if (message.includes("Lose")) {
+                //         computerScore++;
+                //     }
+// }
 
-if (!wrongInput) {
-    if (playerScore > computerScore) {
-        console.log("You won.");
-    }
-    else if (playerScore < computerScore) {
-        console.log("Computer won.");
-    }
-    else {
-        console.log("It's a tie");
-    }
-}
+// if (!wrongInput) {
+//     if (playerScore > computerScore) {
+    //         console.log("You won.");
+    //     }
+    //     else if (playerScore < computerScore) {
+        //         console.log("Computer won.");
+        //     }
+        //     else {
+            //         console.log("It's a tie");
+            //     }
+            // }
+            
