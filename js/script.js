@@ -43,11 +43,39 @@ function playRound(playerSelection, computerSelection) {
 }
 
 const buttons = document.querySelectorAll('button');
+const resultDiv = document.querySelector('.result');
+let playerScore = 0;
+let computerScore = 0;
 buttons.forEach(button => {
     let computerSelection = getComputerChoice();
-    // console.log(button.dataset.value)
+    
     button.addEventListener('click', ()=>{
-        playRound(button.dataset.value, getComputerChoice())
+       let message = playRound(button.dataset.value, getComputerChoice());
+    //    let para = document.createElement('p');
+    //    let playerPara = document.createElement('p');
+    //    playerPara.textContent = `Player Score : ${playerScore}`
+    //    let computerPara = document.createElement('p');
+    //    computerPara.textContent = `Computer Score : ${computerScore}`
+    //    para.textContent = message;
+    //    resultDiv.appendChild(para);
+    //    resultDiv.appendChild(playerPara);
+    //    resultDiv.appendChild(computerPara);
+    if (message.includes("Won")) {
+                playerScore++;
+            }
+            else if (message.includes("Lose")) {
+                    computerScore++;
+                }
+                resultDiv.textContent = `${message}  player score: ${playerScore}  computer score : ${computerScore}` ;
+    if(playerScore == 5){
+        resultDiv.textContent = "Player won!";
+        playerScore = computerScore = 0;
+    }
+    else if(computerScore == 5){
+        resultDiv.textContent = "Computer won!"
+        playerScore = computerScore = 0;
+
+    }
     })
 })
 
