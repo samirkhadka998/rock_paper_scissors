@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Delius Swash Caps', cursive;
 }
 
 .container {
@@ -15,13 +16,16 @@
 }
 
 .left {
+    /* margin-top: -54px; */
     background-size: cover;
-    background: url(https://images.unsplash.com/photo-1567303314286-6735a4ad9d42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1968&q=80);
-    background-size: 100% 100%;
+    background: url('https://images.unsplash.com/photo-1614606290414-41c139b5fae9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTg3fHxodW1hbiUyMGJsYWNrJTIwYW5kJTIwd2hpdGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60');
+    background-size: 100% 105%;
+    background-position-y: -26px;
+    /* background-position-x: 6px; */
 }
 
 .right {
-    border-left: 2px solid chartreuse;
+    /* border-left: 2px solid chartreuse; */
     background: url(https://images.unsplash.com/photo-1625314887424-9f190599bd56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fFJvYm90c3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60);
     background-size: 100% 100%;
 }
@@ -48,8 +52,9 @@ h1.humanScore {
 .images img {
     width: 100px;
     height: 100px;
-    border: 2px solid azure;
+    border: 2px solid white;
     padding: 10px;
+    border-radius: 20px;
 }
 
 
@@ -58,19 +63,26 @@ h1.humanScore {
     scale: 1.2;
     background: blueviolet;
     border: 5px solid;
+    cursor: han;
+}
+
+.left img:hover{
+    cursor: pointer;
 }
 
 
-
 .message {
-    border: 2px solid green;
+    /* border: 2px solid green; */
     width: 438px;
     position: absolute;
     font-size: 41px;
-    top: 50%;
+    top: 45%;
     left: 38%;
     color: #fff;
+    background: #0202025c;
     text-align: center;
+    border-radius: 20px;
+    padding: 10px;
 }
 
 .playing {

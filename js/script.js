@@ -12,32 +12,32 @@ function playRound(playerSelection, computerSelection) {
     // your code here!
     playerSelection = playerSelection.toLowerCase();
     if (playerSelection === computerSelection) {
-        return "It's a Draw";
+        return "It's a Draw !";
     }
     else if (playerSelection === "rock") {
         if (computerSelection == "paper") {
-            return "You Lose! Paper beats Rock";
+            return "You Lose! Paper beats Rock.";
         }
         else {
-            return "You Won! Rock beats Scissor";
+            return "You Won! Rock beats Scissor.";
         }
     }
 
     else if (playerSelection === "paper") {
         if (computerSelection == "rock") {
-            return "You Won! Paper beats Rock";
+            return "You Won! Paper beats Rock.";
         }
         else {
-            return "You Lose! Scissor beats Paper";
+            return "You Lose! Scissor beats Paper.";
         }
     }
 
     else if (playerSelection == "scissor") {
         if (computerSelection == "rock") {
-            return "You Lose! Rock beats Scissor";
+            return "You Lose! Rock beats Scissor.";
         }
         else {
-            return "You Won ! Scissor beats Paper";
+            return "You Won ! Scissor beats Paper.";
         }
     }
 }
