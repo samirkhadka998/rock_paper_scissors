@@ -93,8 +93,20 @@ setScore(playerScore,computerScore)
 images.forEach(image => {
     image.addEventListener('click', ()=>{
         playSound('tink', image.dataset.value);
+        let computerChoice = getComputerChoice();
+        const computerImage = document.querySelector(`#${computerChoice}`);
+        if(computerImage){
+            computerImage.classList.add('playing');
+            computerImage.classList.add('hoverEffect');
+            
+            setTimeout(() => {
+                computerImage.classList.remove('playing');
+                computerImage.classList.remove('hoverEffect');
+            }, 50);
+        }
 
-       let message = playRound(image.dataset.value, getComputerChoice());
+
+       let message = playRound(image.dataset.value, computerChoice);
 
     if (message.includes("Won")) {
                 playerScore++;

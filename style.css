@@ -10,7 +10,7 @@
 }
 
 .left, .right {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     flex: auto;
 }
 
@@ -21,6 +21,7 @@
 }
 
 .right {
+    border-left: 2px solid chartreuse;
     background: url(https://images.unsplash.com/photo-1625314887424-9f190599bd56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fFJvYm90c3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60);
     background-size: 100% 100%;
 }
@@ -38,10 +39,10 @@ h1.humanScore {
 .images {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 75%;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 35px;
 }
 
 .images img {
@@ -53,11 +54,13 @@ h1.humanScore {
 
 
 
-.images img:hover{
+.images img:hover, .hoverEffect{
     scale: 1.2;
     background: blueviolet;
     border: 5px solid;
 }
+
+
 
 .message {
     border: 2px solid green;
