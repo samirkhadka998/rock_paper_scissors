@@ -42,42 +42,92 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-const buttons = document.querySelectorAll('button');
-const resultDiv = document.querySelector('.result');
+function setScore(playerScore, computerScore, message = ''){
+const h1humanScore = document.querySelector('.humanScore');
+const h1computerScore = document.querySelector('.computerScore');
+const result = document.querySelector('.message');
+h1humanScore.textContent = playerScore;
+h1computerScore.textContent = computerScore;
+result.textContent = message
+}
+
+function setDivFlex(left,right){
+    var leftDiv = document.querySelector('.left');
+    var rightDiv = document.querySelector('.right');
+    if(!leftDiv && !rightDiv) return;
+
+    leftDiv.style.flexGrow = left;
+    rightDiv.style.flexGrow = right;
+    setTimeout(() => {
+        leftDiv.style.flexGrow = 1;
+    rightDiv.style.flexGrow = 1;
+    }, 3000);
+
+
+    
+}
+
+function playSound(audio, clickedImage = ''){
+    audio = '#' +audio + "Sound";
+    let audioSound = document.querySelector(audio);
+    const img = document.querySelector(`img[data-value="${clickedImage}"]`);
+
+    if (audioSound) {
+        audio.currentTime = 0;
+        audioSound.play();
+        if(!img) return;
+        img.classList.add('playing');
+        setTimeout(() => {
+            img.classList.remove('playing');
+        }, 50);
+
+    }
+}
 let playerScore = 0;
 let computerScore = 0;
-buttons.forEach(button => {
-    let computerSelection = getComputerChoice();
-    
-    button.addEventListener('click', ()=>{
-       let message = playRound(button.dataset.value, getComputerChoice());
-    //    let para = document.createElement('p');
-    //    let playerPara = document.createElement('p');
-    //    playerPara.textContent = `Player Score : ${playerScore}`
-    //    let computerPara = document.createElement('p');
-    //    computerPara.textContent = `Computer Score : ${computerScore}`
-    //    para.textContent = message;
-    //    resultDiv.appendChild(para);
-    //    resultDiv.appendChild(playerPara);
-    //    resultDiv.appendChild(computerPara);
+const images = document.querySelectorAll('.image');
+const resultDiv = document.querySelector('.result');
+setScore(playerScore,computerScore)
+
+
+images.forEach(image => {
+    image.addEventListener('click', ()=>{
+        playSound('tink', image.dataset.value);
+
+       let message = playRound(image.dataset.value, getComputerChoice());
+
     if (message.includes("Won")) {
                 playerScore++;
             }
             else if (message.includes("Lose")) {
                     computerScore++;
                 }
-                resultDiv.textContent = `${message}  player score: ${playerScore}  computer score : ${computerScore}` ;
+                setScore(playerScore,computerScore, message)
+
     if(playerScore == 5){
-        resultDiv.textContent = "Player won!";
+        message = "Player won!";
         playerScore = computerScore = 0;
-    }
-    else if(computerScore == 5){
-        resultDiv.textContent = "Computer won!"
-        playerScore = computerScore = 0;
+        setScore(playerScore,computerScore,message)
+        playSound('human')
+        setDivFlex(3,1);
+        
 
     }
+    else if(computerScore == 5){
+        message = "Computer won!"
+        playerScore = computerScore = 0;
+        setScore(playerScore,computerScore,message)
+        playSound('robot')
+        setDivFlex(1,3);
+
+
+    }
+    
     })
 })
+
+
+
 
 // let playerScore = 0;
 // let computerScore = 0;

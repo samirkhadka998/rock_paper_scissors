@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissor</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <button data-value ="Rock">Rock</button>
-    <button data-value="Paper">Paper</button>
-    <button data-value="Scissor">Scissor</button>
-    <div class="result">
-        
+    <div class="container">
+
+        <div class="left">
+            <h1 class="humanScore"></h1>
+            <div class="images">
+                <img data-value="Rock" class="image" src="https://img.icons8.com/?size=1x&amp;id=37630&amp;format=png" alt="Rock">
+                <img data-value="Paper" class="image" src="https://img.icons8.com/?size=1x&amp;id=6552&amp;format=png" alt="Paper">
+                <img data-value="Scissor" class="image" src="https://img.icons8.com/?size=1x&amp;id=leFSPTyErTgl&amp;format=png" alt="Scissor">
+            </div>
+        </div>
+        <div class="right">
+            <h1 class="computerScore"></h1>
+            <div class="images">
+                <img src="https://img.icons8.com/?size=1x&amp;id=37630&amp;format=png" alt="Rock">
+                <img src="https://img.icons8.com/?size=1x&amp;id=6552&amp;format=png" alt="Paper">
+                <img src="https://img.icons8.com/?size=1x&amp;id=leFSPTyErTgl&amp;format=png" alt="Scissor">
+            </div>
+        </div>
+
+        <div class="message">
+            this is message
+        </div>
+        <audio id="clickSound" src="sounds/click.wav"></audio>
+        <audio id="humanSound" src="sounds/humanWon.wav"></audio>
+        <audio id="robotSound" src="sounds/robotWon.wav"></audio>
+        <audio id="tinkSound" src="sounds/tink.wav"></audio>
     </div>
     <script src="js/script.js"></script>
 </body>
