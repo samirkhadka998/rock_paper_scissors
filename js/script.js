@@ -49,6 +49,12 @@ const result = document.querySelector('.message');
 h1humanScore.textContent = playerScore;
 h1computerScore.textContent = computerScore;
 result.textContent = message
+if(message){
+    result.style.padding = 10;
+}
+else{
+    result.style.padding = 0;
+}
 }
 
 function setDivFlex(left,right){

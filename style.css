@@ -18,7 +18,7 @@
 .left {
     /* margin-top: -54px; */
     background-size: cover;
-    background: url('https://images.unsplash.com/photo-1614606290414-41c139b5fae9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTg3fHxodW1hbiUyMGJsYWNrJTIwYW5kJTIwd2hpdGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60');
+    background: url('img/human.jpg');
     background-size: 100% 105%;
     background-position-y: -26px;
     /* background-position-x: 6px; */
@@ -26,7 +26,7 @@
 
 .right {
     /* border-left: 2px solid chartreuse; */
-    background: url(https://images.unsplash.com/photo-1625314887424-9f190599bd56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fFJvYm90c3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60);
+    background: url('img/robot.jpg');
     background-size: 100% 100%;
 }
 
@@ -52,7 +52,7 @@ h1.humanScore {
 .images img {
     width: 100px;
     height: 100px;
-    border: 2px solid white;
+    border: 2px solid #e4e0ed4d;
     padding: 10px;
     border-radius: 20px;
 }
@@ -62,7 +62,7 @@ h1.humanScore {
 .images img:hover, .hoverEffect{
     scale: 1.2;
     background: blueviolet;
-    border: 5px solid;
+    border: 3px solid chartreuse;
     cursor: han;
 }
 
@@ -82,7 +82,7 @@ h1.humanScore {
     background: #0202025c;
     text-align: center;
     border-radius: 20px;
-    padding: 10px;
+    /* padding: 10px; */
 }
 
 .playing {
@@ -90,3 +90,11 @@ h1.humanScore {
     border-color: #ffc600;
     box-shadow: 0 0 1rem #ffc600;
   }
+
+  .images span {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    text-align: center;
+    gap: 10px;
+}
